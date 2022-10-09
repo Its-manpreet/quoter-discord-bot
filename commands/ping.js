@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, Client, GatewayIntentBits } = require('discord.js');
+const { SlashCommandBuilder } = require('discord.js');
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('ping')
