@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const { Client, GatewayIntentBits, WebSocketManager, Collection } = require('discord.js');
 const { token } = require('./config.json');
+const interaction = require('./events/interaction');
 
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
@@ -46,5 +47,6 @@ client.on('interactionCreate', async interaction => {
 		await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
 	}
 });
+
 // Login to Discord with your client's token
 client.login(token);
