@@ -1,5 +1,7 @@
-const { SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const em = require("../config/emojis.json")
 var uptime
+var ping_embed
 var unit
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -30,7 +32,14 @@ module.exports = {
 			//days
 			uptime = Math.floor(client.uptime / 86400000)
 			unit = "days"
-		}
-		await interaction.reply(`Pong!\nUptime: ${uptime} ${unit}\nApi ping: ${client.ws.ping}ms`);
-	},
+		};
+		ping_embed = new EmbedBuilder()
+		.setColor(0x0099FF)
+		.setAuthor({ name : `Pong!`})
+		.setThumbnail('https://cdn.discordapp.com/emojis/1030485830390792232.gif?quality=lossless&size=48')
+		.setDescription(`Uptime: ${uptime} ${unit}\nApi ping: ${client.ws.ping}ms`)
+		.setTimestamp()
+		.setFooter({ text: `Support the project for lower pings`});
+		await interaction.reply({ embeds: [ping_embed] });
+	}
 };
