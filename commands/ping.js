@@ -6,7 +6,7 @@ var unit
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('ping')
-		.setDescription('Replies with Pong!'),
+		.setDescription('Ping of the bot'),
 	async execute(interaction, client) {
 		if (client.uptime < 1000) {
 			//milliseconds
