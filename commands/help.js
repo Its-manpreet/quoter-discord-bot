@@ -9,7 +9,7 @@ module.exports = {
 		help_embed = new EmbedBuilder()
 		.setColor(0x0099FF)
 		.setAuthor({ name : `Help menu`})
-		.setDescription("Execute `/help` for this menu\nExecute `/quote` for a random quote\nExecute `/about` for info about bot\nExecute `/ping` for bot's ping")
+		.setDescription("Execute `/about` for info about bot\nExecute `/help` for this menu\nExecute `/invite` for invite link\nExecute `/ping` for bot's ping\nExecute `/quote` for a random quote")
 		.setTimestamp()
 		.setFooter({ text: `bots's ping - ${client.ws.ping}ms`});
 		await interaction.reply({ embeds: [help_embed] });

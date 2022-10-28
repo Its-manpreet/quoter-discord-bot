@@ -2,7 +2,7 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 var about_embed = new EmbedBuilder()
 .setColor(0x0099FF)
 .setAuthor({ name : `About me`})
-.setDescription(`Hey, I'm quoter discord bot\nI was made by <@!780330532550606868>\nVersion = BETA 0.3.4`)
+.setDescription(`Hey, I'm quoter discord bot\nI was made by <@!780330532550606868>\nVersion = Release 1.1.0`)
 .setTimestamp()
 .setFooter({ text: `Join the support server too!`});
 
