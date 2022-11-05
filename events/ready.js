@@ -7,6 +7,7 @@ module.exports = {
 	execute(client) {
 		console.log(`Ready! Logged in as ${client.user.tag}`);
 		client.user.setPresence({ activities: [{ name: 'motivational quotes' , type: ActivityType.Listening }], status: 'idle' });
+		num = fs.readFileSync("./logs/lognum.txt")
 		numint = parseInt(num)
 		fs.writeFileSync("./logs/lognum.txt", `${numint + 1}`)
 		newnum = fs.readFileSync("./logs/lognum.txt")
