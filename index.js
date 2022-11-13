@@ -1,13 +1,23 @@
 // Require the necessary discord.js classes
 const fs = require('fs');
 const path = require('path');
+const Topgg = require(`@top-gg/sdk`)
+const { AutoPoster } = require('topgg-autoposter')
 const { Client, GatewayIntentBits, WebSocketManager, Collection, Message, messageLink } = require('discord.js');
-const { token, prefix } = require("./config/config.json");
+const { token, prefix, topggtoken } = require("./config/config.json");
 const interaction = require('./events/interaction');
 
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
+//top.gg
+const api = new Topgg.Api(topggtoken)
+const ap = AutoPoster(topggtoken, client)
 
+ap.on('posted', () => {
+	console.log('Posted stats to Top.gg!')
+  })
+
+//commands stuff
 client.commands = new Collection()
 const commandsPath = path.join(__dirname, 'commands');
 const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
@@ -37,7 +47,7 @@ client.on('messageCreate', async Message => {
 		const cmmndexe = client.commands.get(cmmnd)
 		if (!cmmndexe) return
 		try {
-			await cmmndexe.execute(Message, client );
+			await cmmndexe.msgexe(Message, client, api);
 		} catch (error) {
 			console.error(error);
 			await Message.reply('There was an error while executing this command!');
@@ -54,7 +64,7 @@ client.on('interactionCreate', async interaction => {
 	if (!command) return;
 
 	try {
-		await command.execute(interaction, client);
+		await command.execute(interaction, client, api);
 	} catch (error) {
 		console.error(error);
 		await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });

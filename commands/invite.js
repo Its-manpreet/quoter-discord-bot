@@ -16,4 +16,7 @@ module.exports = {
 	async execute(interaction) {
 		await interaction.reply({ embeds: [invite_embed] });
 	},
+	async msgexe(Message) {
+		await Message.reply({ embeds: [invite_embed] });
+	},
 };
