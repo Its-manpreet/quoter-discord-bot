@@ -1,14 +1,14 @@
 {
   "name": "discord-bot",
   "version": "1.0.0",
-  "description": "",
+  "description": "quoter discord bot",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
     "start2": "nodemon test.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Manpreet",
   "license": "ISC",
   "dependencies": {
     "@top-gg/sdk": "^3.1.3",

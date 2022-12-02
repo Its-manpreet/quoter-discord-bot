@@ -11,11 +11,13 @@ const interaction = require('./events/interaction');
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
 //top.gg
 const api = new Topgg.Api(topggtoken)
+
 const ap = AutoPoster(topggtoken, client)
 
 ap.on('posted', () => {
 	console.log('Posted stats to Top.gg!')
   })
+
 
 //commands stuff
 client.commands = new Collection()
@@ -40,20 +42,6 @@ for (const file of eventFiles) {
 		client.on(event.name, (...args) => event.execute(...args));
 	}
 }
-//msg commands
-client.on('messageCreate', async Message => {
-	if(Message.content.startsWith(prefix)){
-		cmmnd = Message.content.slice(prefix.length, Message.content.length)
-		const cmmndexe = client.commands.get(cmmnd)
-		if (!cmmndexe) return
-		try {
-			await cmmndexe.msgexe(Message, client, api);
-		} catch (error) {
-			console.error(error);
-			await Message.reply('There was an error while executing this command!');
-		}
-	}
-})
 //listen for commands
 client.on('interactionCreate', async interaction => {
 	
@@ -70,6 +58,5 @@ client.on('interactionCreate', async interaction => {
 		await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
 	}
 });
-
 // Login to Discord with your client's token
 client.login(token);

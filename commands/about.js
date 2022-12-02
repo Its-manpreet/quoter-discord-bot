@@ -4,8 +4,12 @@ var about_embed = new EmbedBuilder()
 .setAuthor({ name : `About me`})
 .setDescription(`
 Hey, I'm quoter discord bot
+I have 7 commands
+I have 2k+ quotes
+With each quotes having its tags and author
 I was made by <@!780330532550606868>
-Version = \`Release 1.3\`
+I was made <t:1664928000:R>
+Version = \`Beta 1.4\`
 `)
 .setTimestamp()
 .setFooter({ text: `Join the support server too!`});
@@ -16,8 +20,5 @@ module.exports = {
 		.setDescription('About the bot'),
 	async execute(interaction) {
 		await interaction.reply({ embeds: [about_embed] });
-	},
-	async msgexe(Message) {
-		await Message.reply({ embeds: [about_embed] });
 	},
 };
