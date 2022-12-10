@@ -1,7 +1,6 @@
 {
-    "token" : "MTAzNTUzNTc5OTI5MjI2NDQ2OQ.G1g8CQ.ff_Uk8r_sUxzctD1twGvqd4-ps-sLPvxY3dazM",
-    "clientId" : "1035535799292264469",
-    "guildId" : "1027172514880827404",
-    "prefix" : "q!",
-    "topggtoken" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwMjcxNjU0NjE0MDc4NTg3MTAiLCJib3QiOnRydWUsImlhdCI6MTY2ODMxNjM0OX0.wwbWgvLhcQOLyz1rgvYzFIUZ7D3G2ayjcDd_7IaGnz8"
+    "token" : "token",
+    "clientId" : "application Id",
+    "guildId" : "guildId",
+    "topggtoken" : "topggtoken"
 }

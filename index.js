@@ -4,7 +4,7 @@ const path = require('path');
 const Topgg = require(`@top-gg/sdk`)
 const { AutoPoster } = require('topgg-autoposter')
 const { Client, GatewayIntentBits, WebSocketManager, Collection, Message, messageLink } = require('discord.js');
-const { token, prefix, topggtoken } = require("./config/config.json");
+const { token, topggtoken } = require("./config/config.json");
 const interaction = require('./events/interaction');
 
 // Create a new client instance
