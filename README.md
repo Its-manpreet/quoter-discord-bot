@@ -1,5 +1,7 @@
 ﻿# Quoter discord bot
- [![Discord Bots](https://top.gg/api/widget/1027165461407858710.svg)(https://top.gg/bot/1027165461407858710)
+ ![Discord Bots](https://top.gg/api/widget/1027165461407858710.svg)
+ 
+ [invite me](https://top.gg/bot/1027165461407858710)
 
 
 ## How to run the bot?
