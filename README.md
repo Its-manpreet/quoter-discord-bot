@@ -1,6 +1,8 @@
 ﻿# Quoter discord bot
-This is the code of the [quoter](https://discord.com/oauth2/authorize?client_id=1027165461407858710&scope=bot&permissions=415001606208) bot made by [Manpreet](https://dsc.gg/chillclubop)
-[![Discord Bots](https://top.gg/api/widget/1027165461407858710.svg)(https://top.gg/bot/1027165461407858710)
+ ![Discord Bots](https://top.gg/api/widget/1027165461407858710.svg)
+ 
+ [invite me](https://top.gg/bot/1027165461407858710)
+
 
 ## How to run the bot?
 here are the steps on how to run the bot code.
