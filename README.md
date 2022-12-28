@@ -22,7 +22,7 @@ here are the steps on how to run the bot code.
     5. Go to `bot` section and click `add bot` and press `yes, do it!`
     6. Press `reset token` and then `yes, do it!` and enter your 2FA code if it asks.
     7. Click `copy` or copy the token manually also copy the `application id` from general information, we will ned these later. 
-    8. invite your bot by going to `https://discord.com/oauth2/authorize?client_id=<YOUR APPLICATION ID>&scope=bot&permissions=415001606208` 
+    8. invite your bot by going to `https://discord.com/oauth2/authorize?client_id=YOUR APPLICATION ID&scope=bot&permissions=415001606208` 
 3. Download the bot files.
     * use `git clone` to clone this [repo](https://github.com/Its-manpreet/discord-bot).
     * or download the [zip file](https://github.com/Its-manpreet/discord-bot/archive/refs/heads/main.zip) and unzip it.
