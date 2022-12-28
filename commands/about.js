@@ -8,8 +8,9 @@ I have 7 commands
 I have 2k+ quotes
 With each quotes having its tags and author
 I was made by <@!780330532550606868>
+support server discord.gg/9hp4W9YAVu
 I was made <t:1664928000:R>
-Version = \`Beta 1.4\`
+Version = \`release 1.4\`
 `)
 .setTimestamp()
 .setFooter({ text: `Join the support server too!`});

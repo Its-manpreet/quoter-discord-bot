@@ -1,5 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
-const interaction = require('../events/interaction');
+
 var vote_embed
 
 module.exports = {

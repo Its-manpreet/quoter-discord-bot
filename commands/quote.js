@@ -1,6 +1,6 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const fetch = require("node-fetch")
-const { prefix } = require("../config/config.json")
+
 var quote_embed
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -8,7 +8,7 @@ module.exports = {
 		.setDescription('Gives a random quote!')
 		.addStringOption(option =>
 			option.setName('tags')
-				.setDescription('The quote tags')),
+			.setDescription('The quote tags')),
 	async execute(interaction) {
 		tag = interaction.options.getString('tags');
 		if(!tag){
