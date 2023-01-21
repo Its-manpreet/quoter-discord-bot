@@ -8,7 +8,7 @@ const { token, topggtoken } = require("./config/config.json");
 const interaction = require('./events/interaction');
 
 // Create a new client instance
-const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
+const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 //top.gg
 const api = new Topgg.Api(topggtoken)
 
