@@ -1,6 +1,6 @@
 {
-"token" : "token",
-"clientId" : "clientId",
-"guildId" : "guildid",
-"topggtoken" : "topggtoken"
+    "token" : "token",
+    "clientId" : "application id",
+    "guildId" : "guild id",
+    "topggtoken" : "topggtoken"
 }
