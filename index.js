@@ -10,15 +10,18 @@ const interaction = require('./events/interaction');
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
 //top.gg
-const api = new Topgg.Api(topggtoken)
+if (topggtoken != "topggtoken"){
+	const api = new Topgg.Api(topggtoken)
 
-const ap = AutoPoster(topggtoken, client)
+	const ap = AutoPoster(topggtoken, client)
 
-ap.on('posted', () => {
-	console.log('Posted stats to Top.gg!')
-  })
+	ap.on('posted', () => {
+		console.log('Posted stats to Top.gg!')
+  	})
+}
 
-
+//deploy cmnds
+eval(fs.readFileSync("./deploy-commands.js"))
 //commands stuff
 client.commands = new Collection()
 const commandsPath = path.join(__dirname, 'commands');
