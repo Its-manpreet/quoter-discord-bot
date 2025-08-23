@@ -2,60 +2,72 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const fetch = require("node-fetch")
 
 var quote_embed
+
+module.exports = {
+	data: new SlashCommandBuilder()
+		.setName('quote')
+		.setDescription('Gives a random quote!'),
+	async execute(interaction) {
+		await interaction.deferReply();
+
+		try {
+			const response = await fetch('https://zenquotes.io/api/random');
+			const data = await response.json();
+
+			quote_embed = new EmbedBuilder()
+				.setColor(0x0099FF)
+				.setAuthor({ name: `By: ${data[0].a}` })
+				.setDescription(`__**${data[0].q}**__`)
+				.setTimestamp()
+				.setFooter({ text: "Quoter discord bot." });
+
+			await interaction.editReply({ embeds: [quote_embed] });
+		} catch (error) {
+			console.error(error);
+			await interaction.editReply('Something went wrong while fetching the quote.');
+		}
+	}
+};
+
+/* lukePeavey quotable.io implementation 
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('quote')
 		.setDescription('Gives a random quote!')
-		.addStringOption(option =>
-			option.setName('tags')
-			.setDescription('The quote tags')),
+		// .addStringOption(option =>
+		// 	option.setName('tags')
+		// 	.setDescription('The quote tags')),
 	async execute(interaction) {
-		tag = interaction.options.getString('tags');
-		if(!tag){
-			fetch('https://api.quotable.io/random')
-			.then(res => res.json())
-			.then(data => {
-				quote = data.content
-				author = data.author
-				ID = data._id })
-			.then(() => quote_embed = new EmbedBuilder()
-				.setColor(0x0099FF)
-				.setAuthor({ name : `By: ${author}`})
-				.setDescription(`__**${quote}**__`)
-				.setTimestamp()
-				.setFooter({ text: `ID: ${ID}`})
-				)
-			.then(() => interaction.reply({ embeds: [quote_embed] }))
-		}
-		else{
-			fetch(`https://api.quotable.io/random?tags=${tag}`)
-			.then(res => res.json())
-			.then(data => {
-				quote = data.content
-				author = data.author
-				ID = data._id
-				error_code = data.statusCode
-				error_msg = data.statusMessage
-			})
-			.then(() => {if(error_code){
-			quote_embed = new EmbedBuilder()
-				.setColor(0xFF0000)
-				.setAuthor({ name : `ERROR: ${error_code}`})
-				.setDescription(`${error_msg}`)
-				.setTimestamp()
-				.setFooter({ text: `try checking spelling`})
-
-			interaction.reply({ embeds: [quote_embed] })}
-			else{
+		await interaction.deferReply();
+	
+		const tag = interaction.options.getString('tags');
+		let quote_embed;
+	
+		try {
+			const response = await fetch(tag ? `http://api.quotable.io/random?tags=${tag}` : 'http://api.quotable.io/random');
+			const data = await response.json();
+	
+			if (data.statusCode) {
 				quote_embed = new EmbedBuilder()
-				.setColor(0x0099FF)
-				.setAuthor({ name : `By: ${author}`})
-				.setDescription(`__**${quote}**__`)
-				.setTimestamp()
-				.setFooter({ text: `ID: ${ID}`})
-
-				interaction.reply({ embeds: [quote_embed] })
-		}})
+					.setColor(0xFF0000)
+					.setAuthor({ name: `ERROR: ${data.statusCode}` })
+					.setDescription(`${data.statusMessage}`)
+					.setTimestamp()
+					.setFooter({ text: `try checking spelling` });
+			} else {
+				quote_embed = new EmbedBuilder()
+					.setColor(0x0099FF)
+					.setAuthor({ name: `By: ${data.author}` })
+					.setDescription(`__**${data.content}**__`)
+					.setTimestamp()
+					.setFooter({ text: `ID: ${data._id}` });
+			}
+	
+			await interaction.editReply({ embeds: [quote_embed] });
+		} catch (error) {
+			console.error(error);
+			await interaction.editReply('Something went wrong while fetching the quote.');
+		}
 	}
-},
 };
+*/
