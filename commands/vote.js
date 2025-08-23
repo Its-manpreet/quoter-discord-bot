@@ -12,7 +12,7 @@ module.exports = {
 			vote_embed = new EmbedBuilder()
 			.setColor(0x0099FF)
 			.setAuthor({ name : 'Vote me!'})
-			.setDescription('[CLick me!](https://top.gg/bot/1027165461407858710) to vote\nNOTE: you have already voted me in the past 12 hours\nThanks for voting me')
+			.setDescription('[Click me!](https://top.gg/bot/1027165461407858710) to vote\nNOTE: you have already voted me in the past 12 hours\nThanks for voting me')
 			.setTimestamp()
 			.setFooter({ text: "You can vote me every 12 hours"});
 			await interaction.reply({ embeds: [vote_embed] })
@@ -21,7 +21,7 @@ module.exports = {
 			vote_embed = new EmbedBuilder()
 			.setColor(0x0099FF)
 			.setAuthor({ name : 'Vote me!'})
-			.setDescription('[CLick me!](https://top.gg/bot/1027165461407858710) to vote')
+			.setDescription('[Click me!](https://top.gg/bot/1027165461407858710) to vote')
 			.setTimestamp()
 			.setFooter({ text: "You can vote me every 12 hours"});
 			await interaction.reply({ embeds: [vote_embed] })

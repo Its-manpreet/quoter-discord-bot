@@ -64,6 +64,7 @@ module.exports = {
 		.setName('tags')
 		.setDescription('List of all Tags'),
 	async execute(interaction) {
-		await interaction.reply({ embeds: [tags_embed] });
+		// await interaction.reply({ embeds: [tags_embed] });
+		await interaction.reply("Tags feature is currently disabled.");
 	},
 };

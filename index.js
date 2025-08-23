@@ -10,8 +10,9 @@ const interaction = require('./events/interaction');
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 //top.gg
+var api
 if (topggtoken != "topggtoken"){
-	const api = new Topgg.Api(topggtoken)
+	api = new Topgg.Api(topggtoken)
 
 	const ap = AutoPoster(topggtoken, client)
 

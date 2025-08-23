@@ -9,7 +9,7 @@ Execute \`/invite\` for invite link
 Execute \`/ping\` for bot's ping
 Execute \`/quote\` for a random quote
 Execute \`/vote\` for bot's Top.gg vote link
-Execute \`/tags\` for all the tags list
+Execute \`/tags\` for all the tags list (temporarily disabled)
 `)
 	.setTimestamp()
 	.setFooter({ text: "more commands coming soon!"});
