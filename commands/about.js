@@ -10,7 +10,8 @@ With each quotes having its tags and author
 I was made by <@!780330532550606868>
 support server discord.gg/9hp4W9YAVu
 I was made <t:1664928000:R>
-Version = \`release 1.6\`
+Version = \`release 2.0\`
+Credit to [Luke Peavey](https://github.com/lukepeavey/quotable) for the quotes.
 `)
 .setTimestamp()
 .setFooter({ text: `Join the support server too!`});
