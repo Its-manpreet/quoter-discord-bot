@@ -1,5 +1,6 @@
 const fs = require("fs")
 const { ActivityType } = require("discord.js")
+
 var num
 
 function writelog(numfile, logfolder, content) {
@@ -29,7 +30,7 @@ function logwriter(logfolder, content){
 	}
 }
 module.exports = {
-	name: 'ready',
+	name: 'clientReady',
 	once: true,
 	execute(client) {
 		console.log(`Ready! Logged in as ${client.user.tag}`);

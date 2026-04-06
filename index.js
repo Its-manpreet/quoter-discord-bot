@@ -23,6 +23,7 @@ if (topggtoken != "topggtoken"){
 
 //deploy cmnds
 eval(fs.readFileSync("./deploy-commands.js"))
+
 //commands stuff
 client.commands = new Collection()
 const commandsPath = path.join(__dirname, 'commands');
@@ -59,7 +60,7 @@ client.on('interactionCreate', async interaction => {
 		await command.execute(interaction, client, api);
 	} catch (error) {
 		console.error(error);
-		await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+		(await interaction.reply({ content: 'There was an error while executing this command!', flags: MessageFlags.Ephemeral}));
 	}
 });
 // Login to Discord with your client's token
