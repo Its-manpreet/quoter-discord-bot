@@ -44,6 +44,10 @@ module.exports = {
             .setTimestamp()
             .setFooter({ text: `Try checking spelling` });
             
+            if (!authorName) {
+                return await interaction.editReply({ embeds: [errorEmbed] });
+            }
+            
             const rawAuthor = authorIndex.get(authorName);
             let author = rawAuthor;
             if (!rawAuthor) {

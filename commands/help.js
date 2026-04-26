@@ -4,12 +4,14 @@ var help_embed = new EmbedBuilder()
 	.setAuthor({ name : `Help menu`})
 	.setDescription(`
 Execute \`/about\` for info about bot
+Execute \`/author\` for info about an author
 Execute \`/help\` for this menu
 Execute \`/invite\` for invite link
 Execute \`/ping\` for bot's ping
 Execute \`/quote\` for a random quote
+Execute \`/search\` for searching a quote by criteria
 Execute \`/vote\` for bot's Top.gg vote link
-Execute \`/tags\` for all the tags list (temporarily disabled)
+Execute \`/tags\` for all the tags list
 `)
 	.setTimestamp()
 	.setFooter({ text: "more commands coming soon!"});
